@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dasa — Nav & Nav Pro · Edward Thieme</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.hero-accent { color: var(--red); }
+/* Dasa color stripe */
+.dasa-stripe { height: 4px; background: linear-gradient(to right, #003087, #0066cc, var(--red)); }
+
+/* App feature row */
+.app-features { list-style: none; margin-top: 28px; }
+.app-features li { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--gray-border); font-size: 15px; color: rgba(245,244,240,0.65); line-height: 1.5; }
+.app-features li::before { content: '—'; color: var(--red); flex-shrink: 0; font-family: 'DM Mono', monospace; }
+
+/* Impact callout */
+.impact-callout { background: rgba(192,57,43,0.07); border: 1px solid rgba(192,57,43,0.2); border-left: 3px solid var(--red); padding: 28px 32px; border-radius: 2px; margin: 40px 0; }
+.impact-callout p { font-size: 17px; line-height: 1.7; color: rgba(245,244,240,0.8); }
+.impact-callout strong { color: var(--white); }
+
+/* DS components preview */
+.ds-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: var(--gray-border); border: 1px solid var(--gray-border); margin-top: 32px; }
+.ds-cell { background: var(--gray); padding: 24px 20px; text-align: center; }
+.ds-cell-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); margin-top: 10px; }
+.ds-type-sample { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--white); }
+.ds-color { width: 40px; height: 40px; border-radius: 50%; margin: 0 auto; }
+
+/* Telemedicine */
+.tele-split { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: center; }
+
+/* Results summary table */
+.results-table { width: 100%; border-collapse: collapse; margin-top: 32px; }
+.results-table tr { border-bottom: 1px solid var(--gray-border); }
+.results-table tr:hover td { color: var(--white); }
+.results-table td { padding: 18px 0; font-size: 15px; line-height: 1.5; color: rgba(245,244,240,0.6); }
+.results-table td:first-child { font-family: 'DM Mono', monospace; font-size: 22px; font-weight: 500; color: var(--red); width: 160px; }
+.results-table td:last-child { font-size: 13px; color: rgba(245,244,240,0.35); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; text-align: right; }
+
+@media(max-width:960px){
+  .tele-split { grid-template-columns: 1fr; gap: 40px; }
+  .ds-grid { grid-template-columns: repeat(3,1fr); }
+}
+@media(max-width:600px){
+  .ds-grid { grid-template-columns: repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2L4 7l5 5"/></svg>
+    Back
+  </a>
+  <a href="index.html" class="nav-logo">ET / Portfolio</a>
+</nav>
+
+<!-- HERO -->
+<div class="project-hero">
+  <div class="project-hero-bg">
+    <img class="project-hero-bg-inner" src="images/nav-pro-dashboard.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(100%) brightness(0.22);">
+  </div>
+  <div class="project-hero-overlay"></div>
+  <div class="project-hero-content">
+    <span class="project-tag">Healthcare · São Paulo · 2020–2023</span>
+    <h1 class="project-hero-title">Nav &amp;<br>Nav <em class="hero-accent">Pro</em></h1>
+    <p class="project-hero-sub">A complete digital healthcare ecosystem for patients, doctors, nurses, and hospital management — built from scratch with a team of 75 designers.</p>
+  </div>
+</div>
+<div class="dasa-stripe"></div>
+
+<!-- CONTEXT -->
+<section class="content-section dark">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <p class="section-label">Company</p>
+        <h2 class="section-title" style="font-size:clamp(28px,3vw,42px);">Dasa</h2>
+        <p class="content-body" style="margin-top:20px;">A major healthcare company with an integrated health ecosystem in Latin America — encompassing hospitals, labs, imaging centers, and digital services.</p>
+        <p class="content-body" style="margin-top:16px;">When I joined, Dasa had little to no digital product culture. My mandate: build it from scratch.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p class="section-label">My Role</p>
+        <h2 class="section-title" style="font-size:clamp(28px,3vw,42px);">Head of Design</h2>
+        <ul class="resp-list">
+          <li>
+            <div class="resp-icon"><span>◈</span></div>
+            <div>
+              <div class="resp-title">Team Leader</div>
+              <div class="resp-desc">Built and led a team of 75 designers to establish a new digital experience for Dasa, from scratch.</div>
+            </div>
+          </li>
+          <li>
+            <div class="resp-icon"><span>◈</span></div>
+            <div>
+              <div class="resp-title">Strategic &amp; Product Vision</div>
+              <div class="resp-desc">Conceptualized and defined digital strategies, visions for new products, and roadmaps together with the team.</div>
+            </div>
+          </li>
+          <li>
+            <div class="resp-icon"><span>◈</span></div>
+            <div>
+              <div class="resp-title">Collaborative Approach</div>
+              <div class="resp-desc">Collaborated closely with Marketing VP, Product VP, Heads of Product, Tech, and Data, doctors, medical directors, and stakeholders.</div>
+            </div>
+          </li>
+          <li>
+            <div class="resp-icon"><span>◈</span></div>
+            <div>
+              <div class="resp-title">Design &amp; Culture</div>
+              <div class="resp-desc">Created and led the Design System department (Alma), DesignOps, and Accessibility departments.</div>
+            </div>
+          </li>
+          <li>
+            <div class="resp-icon"><span>◈</span></div>
+            <div>
+              <div class="resp-title">Budget &amp; Finances</div>
+              <div class="resp-desc">Guaranteed smart and efficient spending to maintain cost-effectiveness of the project.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APP NAV -->
+<section class="content-section gray">
+  <div class="container">
+    <p class="section-label reveal">Product 01</p>
+    <h2 class="section-title reveal">App Nav<br><em style="color:var(--red);font-style:italic;">9M Users</em></h2>
+
+    <div class="two-col" style="margin-top:56px;">
+      <div class="reveal">
+        <p class="content-lead">Dasa's pioneer app for customers — a comprehensive range of digital healthcare services in a single platform.</p>
+        <p class="content-body">Designed to empower users with instant access to their healthcare information, the Nav app centralised all of Dasa's fragmented services into a single, cohesive experience.</p>
+
+        <ul class="app-features">
+          <li>Lab tests and image diagnosis results</li>
+          <li>Appointment scheduling for lab tests, doctor appointments, and vaccinations</li>
+          <li>Access to medical records</li>
+          <li>Telemedicine (online appointments)</li>
+          <li>Digital prescriptions</li>
+          <li>General healthcare information</li>
+          <li>Vaccine management</li>
+          <li>Push notification alerts and reminders</li>
+        </ul>
+
+        <div style="margin-top:36px;">
+          <div class="award-badge">
+            <div class="award-dot"></div>
+            <div class="award-text">Brasil Design Award 2021 — Digital Design</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <img src="images/nav-app-screens.jpg" style="width:100%;border-radius:6px;display:block;" alt="App Nav — home screen and lab results">
+
+        <div class="metrics-row" style="margin-top:40px;">
+          <div class="metric">
+            <div class="metric-val"><span class="pos">80%</span></div>
+            <div class="metric-label">CSAT</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val"><span class="pos">+141%</span></div>
+            <div class="metric-label">Appointments 2021</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val"><span class="pos">+226%</span></div>
+            <div class="metric-label">Appointments Q1 2022</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESKTOP WEB -->
+<section class="content-section dark">
+  <div class="container">
+    <p class="section-label reveal">Product 01 · Web</p>
+    <h2 class="section-title reveal">Desktop Web<br><em style="color:var(--red);font-style:italic;">Unified Platform</em></h2>
+    <div class="two-col" style="margin-top:56px;grid-template-columns:1fr 2fr;">
+      <div class="reveal">
+        <p class="content-lead">We streamlined and centralised all healthcare-related services and needs into a unified web platform and app.</p>
+        <p class="content-body">The desktop experience mirrored the mobile app in scope but adapted the information architecture and layout to take full advantage of larger screens — enabling richer data visibility for results, scheduling, and medical records.</p>
+        <div class="metrics-row" style="margin-top:40px;">
+          <div class="metric">
+            <div class="metric-val"><span class="pos">96.7%</span></div>
+            <div class="metric-label">CSAT · App</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val">25<span class="pos">→89%</span></div>
+            <div class="metric-label">CSAT · Web</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val"><span class="pos">+18%</span></div>
+            <div class="metric-label">Conversion</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <img src="images/nav-desktop.jpg" style="width:100%;border-radius:6px;display:block;" alt="Nav — Desktop Web platform">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TELEMEDICINE -->
+<section class="content-section gray">
+  <div class="container">
+    <p class="section-label reveal">Product 01 · Feature</p>
+    <h2 class="section-title reveal">Telemedicine<br><em style="color:var(--red);font-style:italic;">Platform</em></h2>
+
+    <div class="two-col" style="margin-top:56px;grid-template-columns:1fr 2fr;">
+      <div class="reveal">
+        <p class="content-lead">A significant milestone for the team — built and launched during the Covid pandemic.</p>
+        <p class="content-body">The telemedicine platform enabled healthcare workers, including doctors and nurses, to conduct emergency calls and sustain medical treatment throughout the challenging period of the pandemic.</p>
+        <p class="content-body" style="margin-top:16px;">Services include digital prescriptions, updated queue info for medical emergencies, and appointment scheduling with specialists.</p>
+
+        <div class="impact-callout">
+          <p><strong>During the Covid-19 pandemic</strong>, this platform became essential infrastructure — enabling continuity of care when in-person visits were impossible across Dasa's network.</p>
+        </div>
+
+        <div class="metrics-row">
+          <div class="metric">
+            <div class="metric-val"><span class="pos">80%</span></div>
+            <div class="metric-label">CSAT</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val"><span class="pos">+141%</span></div>
+            <div class="metric-label">Appointments 2021</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val"><span class="pos">+226%</span></div>
+            <div class="metric-label">Appointments Q1 2022</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <img src="images/nav-telemedicine.jpg" style="width:100%;border-radius:6px;display:block;" alt="Nav Telemedicine Platform">
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NAV PRO -->
+<section class="content-section dark">
+  <div class="container">
+    <p class="section-label reveal">Product 02</p>
+    <h2 class="section-title reveal">Nav Pro<br><em style="color:var(--red);font-style:italic;">70k Doctors</em></h2>
+
+    <div class="two-col" style="margin-top:56px;grid-template-columns:1fr 2fr;">
+      <div class="reveal">
+        <p class="content-lead">An integrated healthcare data platform tailored for healthcare professionals — powered by robust data analytics and AI.</p>
+        <p class="content-body">The platform excels in predicting and presenting a multitude of possible patient conditions using medical history and algorithms, enabling proactive and informed medical decision-making.</p>
+        <p class="content-body" style="margin-top:16px;">When seamlessly connected with Nav, the platform facilitates doctors to actively engage with their patients, strengthening communication and personalised healthcare strategies.</p>
+
+        <div class="impact-callout">
+          <p>Nav Pro's AI-driven alert system reduced the time to treatment initiation by <strong>6×</strong>, accelerating diagnosis and enabling <strong>7,000 women</strong> to begin cancer treatment sooner through a data-driven mapping initiative in São Paulo.</p>
+        </div>
+
+        <div class="award-badge">
+          <div class="award-dot"></div>
+          <div class="award-text">Brasil Design Award 2021 — Digital Impact</div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <img src="images/nav-pro-dashboard.jpg" style="width:100%;border-radius:6px;display:block;margin-bottom:24px;" alt="Nav Pro — Doctor dashboard">
+        <div class="metrics-row" style="margin-top:32px;">
+          <div class="metric">
+            <div class="metric-val"><span class="pos">70K</span></div>
+            <div class="metric-label">Doctors Registered</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val"><span class="pos">6×</span></div>
+            <div class="metric-label">Faster Cancer Treatment</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val"><span class="pos">5.4K</span></div>
+            <div class="metric-label">Women Diagnosed Faster</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND & DESIGN SYSTEM -->
+<section class="content-section gray">
+  <div class="container">
+    <p class="section-label reveal">Product 03</p>
+    <h2 class="section-title reveal">New Brand, Design Language<br>&amp; <em style="color:var(--red);font-style:italic;">Design System</em></h2>
+
+    <div class="two-col" style="margin-top:56px;align-items:start;">
+      <div class="reveal">
+        <p class="content-lead">In collaboration with the marketing team and design agencies, we orchestrated a complete overhaul of Dasa's digital and brand experience.</p>
+        <ul class="resp-list">
+          <li>
+            <div class="resp-icon"><span>T</span></div>
+            <div>
+              <div class="resp-title">Typography — Dasa Sans</div>
+              <div class="resp-desc">A custom typeface designed exclusively for Dasa, in five weights: light, regular, medium, semibold, and bold.</div>
+            </div>
+          </li>
+          <li>
+            <div class="resp-icon"><span>◻</span></div>
+            <div>
+              <div class="resp-title">Design System — Alma</div>
+              <div class="resp-desc">Created the new structure for both the Design Systems Team and the Accessibility Team and directly led these teams. <a href="https://zeroheight.com/7a44c04f2/p/168447-alma-design-system" target="_blank" rel="noopener" style="color:var(--red);text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.3);">View Alma DS →</a></div>
+            </div>
+          </li>
+          <li>
+            <div class="resp-icon"><span>✦</span></div>
+            <div>
+              <div class="resp-title">Design Language</div>
+              <div class="resp-desc">Original design language, illustrations, and icon system used across all digital and physical touchpoints.</div>
+            </div>
+          </li>
+          <li>
+            <div class="resp-icon"><span>◉</span></div>
+            <div>
+              <div class="resp-title">Rebranding — Dasa Group</div>
+              <div class="resp-desc">Full corporate rebrand encompassing the group identity and all sub-brands within the Dasa ecosystem.</div>
+            </div>
+          </li>
+        </ul>
+        <div style="margin-top:36px;">
+          <div class="award-badge" style="margin-bottom:12px;display:flex;">
+            <div class="award-dot"></div>
+            <div class="award-text">Brasil Design Award 2021 — Dasa Typography</div>
+          </div>
+          <div class="award-badge" style="display:flex;">
+            <div class="award-dot"></div>
+            <div class="award-text">Brasil Design Award 2021 — Dasa Brand Design</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <img src="images/dasa-brand.jpg" style="width:100%;border-radius:6px;display:block;" alt="Dasa Brand — typography, design language and rebranding">
+        <div style="display:none;background:#001030;border-radius:4px;padding:40px 36px;margin-bottom:16px;">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;color:rgba(255,255,255,0.4);margin-bottom:20px;">DASA SANS — Custom Typeface</div>
+          <div style="font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,68px);font-weight:900;color:#3399ff;line-height:1;margin-bottom:12px;">Dasa Sans</div>
+          <div style="font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,48px);font-weight:400;color:#6bb8ff;line-height:1;margin-bottom:20px;">Aabc123</div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.4);line-height:2;text-align:right;">light · regular · medium<br>semibold · <strong style="color:rgba(255,255,255,0.7);">bold</strong></div>
+        </div>
+        <div style="display:none;background:#001030;border-radius:4px;padding:28px 24px;">
+          <div style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,28px);font-weight:900;color:#3399ff;letter-spacing:0.02em;line-height:1.1;margin-bottom:8px;">ABCDEFGHIJKLMN<br>OPQRSTUVWXYZ</div>
+          <div style="font-family:'Playfair Display',serif;font-size:clamp(14px,2vw,22px);color:#6bb8ff;line-height:1.2;margin-bottom:8px;">aabcdefghijklmn<br>opqrstuvwxyz</div>
+          <div style="font-family:'Playfair Display',serif;font-size:clamp(14px,2vw,22px);color:#3399ff;">1234567890 &amp;#@!?&gt;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DS IMPACT -->
+<section class="content-section dark">
+  <div class="container">
+    <p class="section-label reveal">Design System Impact</p>
+    <h2 class="section-title reveal">Alma<br><em style="color:var(--red);font-style:italic;">Design System</em></h2>
+    <div class="two-col" style="margin-top:48px;">
+      <div class="reveal">
+        <p class="content-lead">The Alma Design System became the single source of truth for design and engineering across the entire Dasa product suite.</p>
+        <p class="content-body">By standardising components, patterns, and accessibility guidelines, the system eliminated duplication across 75 designers and multiple product teams. The estimated time and cost savings: <strong>1.5 years of collective design and development effort</strong>.</p>
+        <div class="stat-highlight">
+          <div class="stat-num">1.5 yr</div>
+          <div class="stat-desc">Estimated effort saved across design and engineering through the Alma Design System</div>
+        </div>
+        <a href="https://zeroheight.com/7a44c04f2/p/168447-alma-design-system" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;margin-top:32px;padding:14px 28px;border:1px solid rgba(192,57,43,0.4);border-radius:2px;text-decoration:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);transition:all 0.2s;">
+          <span style="width:8px;height:8px;background:var(--red);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0;"></span>
+          View Alma Design System →
+        </a>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <img src="images/nav-pro-alerts.jpg" style="width:100%;border-radius:6px;display:block;" alt="Nav Pro — Exames alterados · AI-powered patient alerts">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS SUMMARY -->
+<section class="content-section gray">
+  <div class="container">
+    <p class="section-label reveal">Highlights</p>
+    <h2 class="section-title reveal">Key Results</h2>
+    <div class="reveal" style="margin-top:48px;">
+      <table class="results-table">
+        <tr><td>9M+</td><td>App Nav users at peak adoption</td><td>Nav App</td></tr>
+        <tr><td>70K</td><td>Doctors registered on Nav Pro</td><td>Nav Pro</td></tr>
+        <tr><td>80%</td><td>CSAT on the telemedicine and app experience</td><td>Telemedicine</td></tr>
+        <tr><td>96.7%</td><td>CSAT on lab test results (app)</td><td>App Nav</td></tr>
+        <tr><td>25→89%</td><td>CSAT improvement on web lab results</td><td>Desktop Web</td></tr>
+        <tr><td>+18%</td><td>Conversion improvement on lab scheduling</td><td>Conversion</td></tr>
+        <tr><td>+226%</td><td>Appointments growth Q1 2022</td><td>Appointments</td></tr>
+        <tr><td>6×</td><td>Reduction in time to start cancer treatment</td><td>Digital Impact</td></tr>
+        <tr><td>7,000</td><td>Women with accelerated cancer diagnosis</td><td>Digital Impact</td></tr>
+        <tr><td>75→15</td><td>Team scaled from 15 to 75 designers</td><td>Team</td></tr>
+        <tr><td>1.5yr</td><td>Estimated effort saved by the Alma Design System</td><td>Design System</td></tr>
+        <tr><td>5×</td><td>Brasil Design Award wins across the project</td><td>Awards</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM NAV -->
+<div class="project-nav-bottom">
+  <a href="index.html" class="proj-nav-link"><span class="pnl-label">← All Projects</span><span class="pnl-title">Portfolio</span></a>
+  <a href="startups.html" class="proj-nav-link right"><span class="pnl-label">Next Project →</span><span class="pnl-title">Early-Stage Ventures</span></a>
+</div>
+
+<footer>
+  <p>© 2026 Edward Thieme</p>
+  <div class="footer-logo">Edward <em>Thieme</em></div>
+  <p>São Paulo · Brazil</p>
+</footer>
+<script src="shared.js"></script>
+</body>
+</html>

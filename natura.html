@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natura Digital Experiences · Edward Thieme</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.natura-stripe { height:4px;background:linear-gradient(to right,#b5892a,#e8c96e,#b5892a); }
+.ecom-feature { display:grid;grid-template-columns:2fr 3fr;gap:60px;align-items:center;padding:60px 0;border-bottom:1px solid var(--gray-border); }
+.ecom-feature:last-child{border-bottom:none;}
+.ecom-feature.flip{grid-template-columns:3fr 2fr;}
+.img-placeholder { background:var(--gray-mid);border:2px dashed var(--gray-border);border-radius:4px;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px; }
+.img-placeholder-label { font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.2); }
+.img-placeholder-hint { font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.12em;color:rgba(255,255,255,0.1); }
+@media(max-width:960px){.ecom-feature,.ecom-feature.flip{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<nav>
+  <a href="index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2L4 7l5 5"/></svg>Back</a>
+  <a href="index.html" class="nav-logo">ET / Portfolio</a>
+</nav>
+
+<div class="project-hero">
+  <div class="project-hero-bg">
+    <img class="project-hero-bg-inner" src="images/natura-ecommerce.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(100%) brightness(0.2);">
+  </div>
+  <div class="project-hero-overlay"></div>
+  <div class="project-hero-content">
+    <span class="project-tag">E-Commerce · Fjord · São Paulo</span>
+    <h1 class="project-hero-title">Natura<br><em style="color:#e8c96e;">Digital</em></h1>
+    <p class="project-hero-sub">The unification of two separate sites that became a complete redefinition of Natura's digital experience — seamless, engaging, and brand-aligned.</p>
+  </div>
+</div>
+<div class="natura-stripe"></div>
+
+<section class="content-section dark">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <p class="section-label">Company</p>
+        <h2 class="section-title" style="font-size:clamp(28px,3vw,42px);">Natura</h2>
+        <p class="content-body" style="margin-top:20px;">The largest Brazilian cosmetics multinational — with a unique direct-sales model powered by hundreds of thousands of beauty consultants across Latin America. Natura's digital presence needed to bridge the brand's community-driven model with a modern, unified online experience.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p class="section-label">The Challenge</p>
+        <h2 class="section-title" style="font-size:clamp(28px,3vw,42px);">Two Sites. One Experience.</h2>
+        <p class="content-body" style="margin-top:20px;">Natura operated two separate digital platforms — a consumer-facing e-commerce site and a consultant portal. The two experiences were fragmented, inconsistent, and failed to reflect the brand's warmth and identity. The goal: unify them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section gray">
+  <div class="container">
+    <p class="section-label reveal">The Work</p>
+    <h2 class="section-title reveal">Redesigning<br><em style="color:var(--red);font-style:italic;">the Experience</em></h2>
+
+    <div style="margin-top:56px;">
+
+      <!-- Challenge 01 -->
+      <div class="ecom-feature reveal">
+        <div>
+          <p class="section-label" style="font-size:9px;">Challenge 01</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:clamp(22px,2.5vw,34px);font-weight:700;margin-bottom:16px;">Unified Navigation &amp; Architecture</h3>
+          <p class="content-body">Fjord partnered with Natura to expertly craft and redesign an innovative digital experience tailored for e-commerce and digital initiatives. The information architecture was completely overhauled to serve both end consumers and consultants within a single, coherent system.</p>
+        </div>
+        <div>
+          <img src="images/natura-ecommerce.jpg" style="width:100%;border-radius:4px;display:block;" alt="Natura — Unified e-commerce platform">
+        </div>
+      </div>
+
+      <!-- Challenge 02 -->
+      <div class="ecom-feature flip reveal">
+        <div>
+          <p class="section-label" style="font-size:9px;">Challenge 02</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:clamp(22px,2.5vw,34px);font-weight:700;margin-bottom:16px;">Consultant Integration</h3>
+          <p class="content-body">A key innovation was integrating the consultant relationship directly into the consumer shopping experience. Customers could see their assigned consultant, access their recommendations, and maintain the personal relationship that Natura's business model depends on — all within the digital platform.</p>
+        </div>
+        <div>
+          <img src="images/natura-produtos.jpg" style="width:100%;border-radius:4px;display:block;" alt="Natura — Product range">
+        </div>
+      </div>
+
+      <!-- Approach -->
+      <div class="ecom-feature reveal">
+        <div>
+          <p class="section-label" style="font-size:9px;">Approach</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:clamp(22px,2.5vw,34px);font-weight:700;margin-bottom:16px;">Brand-Led Digital Design</h3>
+          <p class="content-body">The collaboration aimed to elevate Natura's online presence, ensuring a seamless and engaging user experience while aligning with the brand's overarching digital objectives. Every interaction was designed to reflect Natura's warmth, its commitment to sustainability, and the human connections at the heart of its business.</p>
+        </div>
+        <div>
+          <div style="background:var(--gray);border:1px solid var(--gray-border);border-radius:4px;padding:32px;display:flex;flex-direction:column;gap:16px;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);">Brand Principles → UX</div>
+            <div style="display:flex;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--gray-border);"><div style="width:8px;height:8px;background:#e8c96e;border-radius:50%;flex-shrink:0;"></div><div style="font-size:15px;color:rgba(245,244,240,0.65);">Warmth &amp; human connection</div></div>
+            <div style="display:flex;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--gray-border);"><div style="width:8px;height:8px;background:#e8c96e;border-radius:50%;flex-shrink:0;"></div><div style="font-size:15px;color:rgba(245,244,240,0.65);">Natural, ingredient-forward storytelling</div></div>
+            <div style="display:flex;gap:12px;align-items:center;padding:14px 0;"><div style="width:8px;height:8px;background:#e8c96e;border-radius:50%;flex-shrink:0;"></div><div style="font-size:15px;color:rgba(245,244,240,0.65);">Seamless mobile-first commerce</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="project-nav-bottom">
+  <a href="santander.html" class="proj-nav-link"><span class="pnl-label">← Previous</span><span class="pnl-title">Santander Car Loans</span></a>
+  <a href="index.html" class="proj-nav-link right"><span class="pnl-label">All Projects</span><span class="pnl-title">Portfolio Index</span></a>
+</div>
+<footer><p>© 2026 Edward Thieme</p><div class="footer-logo">Edward <em>Thieme</em></div><p>São Paulo · Brazil</p></footer>
+<script src="shared.js"></script>
+</body>
+</html>

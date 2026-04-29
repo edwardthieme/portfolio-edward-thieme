@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lya Health &amp; Nina Pet Health · Edward Thieme</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.startup-stripe { height:4px; background:linear-gradient(to right,#1a2a4a,#4a90d9,#e8344a,#1a2a4a); }
+.startup-split { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--gray-border); border:1px solid var(--gray-border); }
+.startup-half { background:var(--black); padding:60px 48px; transition:background 0.3s; }
+.startup-half:hover { background:var(--gray); }
+.startup-half-label { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gray-light); margin-bottom:12px; }
+.startup-half-title { font-family:'Playfair Display',serif; font-size:clamp(28px,3.5vw,48px); font-weight:900; line-height:1; margin-bottom:16px; }
+.startup-half-desc { font-size:15px; line-height:1.7; color:rgba(245,244,240,0.55); }
+.lya-color { color:#4a90d9; }
+.nina-color { color:#e8344a; }
+.divider-gradient { height:3px; background:linear-gradient(to right,#4a90d9,var(--black),#e8344a); }
+@media(max-width:800px){ .startup-split{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2L4 7l5 5"/></svg>Back</a>
+  <a href="index.html" class="nav-logo">ET / Portfolio</a>
+</nav>
+
+<div class="project-hero">
+  <div class="project-hero-bg">
+    <img class="project-hero-bg-inner" src="images/lya-dashboard.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(100%) brightness(0.18);">
+  </div>
+  <div class="project-hero-overlay"></div>
+  <div class="project-hero-content">
+    <span class="project-tag">Healthtech · AI · Startup · 2023–Present</span>
+    <h1 class="project-hero-title">Early-Stage<br><em style="color:#4a90d9;">Ventures</em></h1>
+    <p class="project-hero-sub">Co-designing two startups from zero: an AI-native clinical assistant for doctors, and a comprehensive pet healthcare app — both built with a strong design-first culture.</p>
+  </div>
+</div>
+<div class="startup-stripe"></div>
+
+<div class="startup-split" style="grid-template-columns:1fr 1fr 1fr;">
+  <div class="startup-half">
+    <div class="startup-half-label">Startup 01</div>
+    <h2 class="startup-half-title"><span class="lya-color">Lya</span> Health</h2>
+    <p class="startup-half-desc">Early-stage AI-native healthtech — a clinical assistant that transforms healthcare appointments with the power of AI.</p>
+  </div>
+  <div class="startup-half">
+    <div class="startup-half-label">Startup 02</div>
+    <h2 class="startup-half-title"><span class="nina-color">Nina</span> Pet Health</h2>
+    <p class="startup-half-desc">Early-stage pet healthcare startup — a comprehensive app connecting pet owners with veterinary care, telemedicine, and health management.</p>
+  </div>
+  <div class="startup-half">
+    <div class="startup-half-label">Startup 03</div>
+    <h2 class="startup-half-title"><span style="color:#2ecc71;">Livia</span> Health</h2>
+    <p class="startup-half-desc">Early-stage healthtech — built and scaled the first Design organisation from zero, leading product strategy, AI-driven lab data solutions, and predictive healthcare models.</p>
+  </div>
+</div>
+<div class="red-line"></div>
+
+<!-- LYA HEALTH -->
+<section class="content-section dark">
+  <div class="container">
+    <p class="section-label reveal" style="color:#4a90d9;">Startup 01</p>
+    <h2 class="section-title reveal">Lya <em style="color:#4a90d9;font-style:italic;">Health</em></h2>
+    <p class="content-lead reveal" style="max-width:680px;margin-top:24px;">Transform your healthcare appointments with the power of AI. Summarise consultations efficiently, obtain powerful insights by structuring information in real time, and increase your consultation capacity by up to 40%.</p>
+
+    <div class="two-col" style="margin-top:56px;">
+      <div class="reveal">
+        <p class="section-label" style="color:#4a90d9;font-size:9px;">The Product</p>
+        <h3 style="font-family:'Playfair Display',serif;font-size:clamp(24px,2.8vw,36px);font-weight:700;margin-bottom:20px;">An AI Clinical<br>Assistant</h3>
+        <p class="content-body">Lya Health is designed for doctors — giving them an AI-powered co-pilot during every patient consultation. The app listens, structures, and surfaces insights in real time, freeing doctors from the keyboard so they can focus entirely on the patient.</p>
+        <p class="content-body" style="margin-top:16px;">Doctors can choose from speciality-specific assistants — general practitioner, paediatrics, cardiology — each pre-configured with the relevant clinical cards and logic.</p>
+        <div class="stat-highlight" style="border-top-color:rgba(74,144,217,0.3);">
+          <div class="stat-num" style="color:#4a90d9;">+40%</div>
+          <div class="stat-desc">Increase in consultation capacity — doctors see more patients in the same time</div>
+        </div>
+        <ul class="resp-list" style="margin-top:32px;">
+          <li><div class="resp-icon" style="background:rgba(74,144,217,0.1);border-color:rgba(74,144,217,0.25);"><span style="color:#4a90d9;">◈</span></div><div><div class="resp-title">Real-Time Transcription &amp; Summarisation</div><div class="resp-desc">Automatically transcribes and structures the patient's narrative during the consultation.</div></div></li>
+          <li><div class="resp-icon" style="background:rgba(74,144,217,0.1);border-color:rgba(74,144,217,0.25);"><span style="color:#4a90d9;">◈</span></div><div><div class="resp-title">Diagnostic Hypothesis Generation</div><div class="resp-desc">Surfaces possible diagnoses based on what the patient is describing, cross-referenced with medical history.</div></div></li>
+          <li><div class="resp-icon" style="background:rgba(74,144,217,0.1);border-color:rgba(74,144,217,0.25);"><span style="color:#4a90d9;">◈</span></div><div><div class="resp-title">Multidimensional Sentiment Analysis</div><div class="resp-desc">Analyses anxiety, depression, stress, and pain levels — surfaced visually for the doctor.</div></div></li>
+          <li><div class="resp-icon" style="background:rgba(74,144,217,0.1);border-color:rgba(74,144,217,0.25);"><span style="color:#4a90d9;">◈</span></div><div><div class="resp-title">Question Suggestions</div><div class="resp-desc">Suggests relevant follow-up questions based on the patient's evolving narrative.</div></div></li>
+          <li><div class="resp-icon" style="background:rgba(74,144,217,0.1);border-color:rgba(74,144,217,0.25);"><span style="color:#4a90d9;">◈</span></div><div><div class="resp-title">PubMed Research Integration</div><div class="resp-desc">Doctors can search clinical literature directly within the consultation interface.</div></div></li>
+        </ul>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <img src="images/lya-dashboard.jpg" style="width:100%;border-radius:6px;display:block;" alt="Lya Health — AI clinical assistant dashboard">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-gradient"></div>
+
+<!-- NINA PET HEALTH -->
+<section class="content-section dark">
+  <div class="container">
+    <p class="section-label reveal" style="color:#e8344a;">Startup 02</p>
+    <h2 class="section-title reveal">Nina <em style="color:#e8344a;font-style:italic;">Pet Health</em></h2>
+    <p class="content-lead reveal" style="max-width:680px;margin-top:24px;">Your pet's health starts here. A comprehensive pet healthcare app that connects pet owners with veterinary professionals — for telemedicine, in-clinic scheduling, and personalised care management.</p>
+
+    <div class="two-col" style="margin-top:56px;">
+      <div class="reveal">
+        <p class="section-label" style="color:#e8344a;font-size:9px;">The Product</p>
+        <h3 style="font-family:'Playfair Display',serif;font-size:clamp(24px,2.8vw,36px);font-weight:700;margin-bottom:20px;">Pet Healthcare<br>in Your Pocket</h3>
+        <p class="content-body">Nina Pet Health is built around the idea that pets deserve the same quality of care management that humans have. The app guides owners through onboarding their pet, connects them to a dedicated care team, and tracks health across the pet's entire life.</p>
+        <p class="content-body" style="margin-top:16px;">The experience is warm, playful, and deeply practical — combining the emotional bond owners have with their pets with the clinical rigour needed to keep them healthy.</p>
+        <ul class="resp-list" style="margin-top:32px;">
+          <li><div class="resp-icon" style="background:rgba(232,52,74,0.1);border-color:rgba(232,52,74,0.25);"><span style="color:#e8344a;">◈</span></div><div><div class="resp-title">Telemedicine (Online Vet)</div><div class="resp-desc">Connect with a veterinarian instantly or schedule a consultation — from anywhere.</div></div></li>
+          <li><div class="resp-icon" style="background:rgba(232,52,74,0.1);border-color:rgba(232,52,74,0.25);"><span style="color:#e8344a;">◈</span></div><div><div class="resp-title">In-Clinic Scheduling</div><div class="resp-desc">Book physical appointments, exams, and surgeries with full pre-care instructions.</div></div></li>
+          <li><div class="resp-icon" style="background:rgba(232,52,74,0.1);border-color:rgba(232,52,74,0.25);"><span style="color:#e8344a;">◈</span></div><div><div class="resp-title">Personalised Care Plans</div><div class="resp-desc">AI-driven care recommendations based on the pet's profile, breed, and health history.</div></div></li>
+          <li><div class="resp-icon" style="background:rgba(232,52,74,0.1);border-color:rgba(232,52,74,0.25);"><span style="color:#e8344a;">◈</span></div><div><div class="resp-title">Onboarding by Pet Profile</div><div class="resp-desc">Personalised onboarding questions capture the pet's sex, breed, age, and health conditions.</div></div></li>
+          <li><div class="resp-icon" style="background:rgba(232,52,74,0.1);border-color:rgba(232,52,74,0.25);"><span style="color:#e8344a;">◈</span></div><div><div class="resp-title">Care &amp; Prescription Tracking</div><div class="resp-desc">Track medications, treatments, and vet-prescribed care routines over time.</div></div></li>
+        </ul>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <img src="images/nina-screens-1.jpg" style="width:100%;border-radius:6px;display:block;margin-bottom:12px;" alt="Nina Pet Health — Welcome, exam, home and care screens">
+        <img src="images/nina-screens-2.jpg" style="width:100%;border-radius:6px;display:block;" alt="Nina Pet Health — Onboarding, care recommendations and treatment screens">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-gradient"></div>
+
+<!-- LIVIA HEALTH -->
+<section class="content-section dark">
+  <div class="container">
+    <p class="section-label reveal" style="color:#2ecc71;">Startup 03</p>
+    <h2 class="section-title reveal">Livia <em style="color:#2ecc71;font-style:italic;">Health</em></h2>
+    <p class="content-lead reveal" style="max-width:680px;margin-top:24px;">Built and scaled the first Design organisation from zero — leading design team, product strategy, research, design operations, culture development, and digital transformation initiatives across a growing healthtech platform.</p>
+
+    <div class="two-col" style="margin-top:56px;grid-template-columns:1fr 2fr;">
+      <div class="reveal">
+        <p class="section-label" style="color:#2ecc71;font-size:9px;">The Work</p>
+        <h3 style="font-family:'Playfair Display',serif;font-size:clamp(24px,2.8vw,36px);font-weight:700;margin-bottom:20px;">Design Leadership<br>&amp; Zero-to-One</h3>
+        <p class="content-body">Led end-to-end discovery, strategic definition, and zero-to-one product design initiatives — translating complex business challenges into scalable digital products. Scaled the design organisation from zero to approximately 15 people, establishing team structure, culture, and processes from scratch.</p>
+        <p class="content-body" style="margin-top:16px;">Implemented AI-driven solutions to structure and standardise laboratory test data across multiple brands, systems, and formats — a foundational layer enabling consistency at scale across the platform.</p>
+
+        <div class="stat-highlight" style="border-top-color:rgba(46,204,113,0.3);">
+          <div class="stat-num" style="color:#2ecc71;">0 → 15</div>
+          <div class="stat-desc">Design team built from scratch — structure, culture, and operations established end-to-end</div>
+        </div>
+
+        <ul class="resp-list" style="margin-top:32px;">
+          <li>
+            <div class="resp-icon" style="background:rgba(46,204,113,0.1);border-color:rgba(46,204,113,0.25);"><span style="color:#2ecc71;">◈</span></div>
+            <div>
+              <div class="resp-title">Design Organisation — 0 to ~15</div>
+              <div class="resp-desc">Built the first Design org from zero, including hiring, team structure, rituals, and design culture across the company.</div>
+            </div>
+          </li>
+          <li>
+            <div class="resp-icon" style="background:rgba(46,204,113,0.1);border-color:rgba(46,204,113,0.25);"><span style="color:#2ecc71;">◈</span></div>
+            <div>
+              <div class="resp-title">Zero-to-One Product Design</div>
+              <div class="resp-desc">Led end-to-end discovery and zero-to-one product design — from research and strategic definition through to shipped digital products.</div>
+            </div>
+          </li>
+          <li>
+            <div class="resp-icon" style="background:rgba(46,204,113,0.1);border-color:rgba(46,204,113,0.25);"><span style="color:#2ecc71;">◈</span></div>
+            <div>
+              <div class="resp-title">AI-Driven Lab Data Standardisation</div>
+              <div class="resp-desc">Implemented AI solutions to structure and standardise laboratory test data across multiple brands, systems, and formats.</div>
+            </div>
+          </li>
+          <li>
+            <div class="resp-icon" style="background:rgba(46,204,113,0.1);border-color:rgba(46,204,113,0.25);"><span style="color:#2ecc71;">◈</span></div>
+            <div>
+              <div class="resp-title">Predictive Healthcare Models</div>
+              <div class="resp-desc">Led development of predictive solutions powered by data insights — including models to forecast six-month hospital admissions and identify chronic disease risks.</div>
+            </div>
+          </li>
+          <li>
+            <div class="resp-icon" style="background:rgba(46,204,113,0.1);border-color:rgba(46,204,113,0.25);"><span style="color:#2ecc71;">◈</span></div>
+            <div>
+              <div class="resp-title">DesignOps &amp; Research</div>
+              <div class="resp-desc">Established design operations and research practices — embedding continuous discovery and user testing into the product development process.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <img src="images/livia-health.jpg" style="width:100%;border-radius:6px;display:block;margin-bottom:16px;" alt="Livia Health — Platform">
+        <!-- Key pillars -->
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <div style="background:var(--gray);border:1px solid var(--gray-border);border-left:3px solid #2ecc71;padding:28px 32px;border-radius:2px;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#2ecc71;margin-bottom:10px;">Design Organisation</div>
+            <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--white);line-height:1;">0 → ~15</div>
+            <div style="font-size:13px;color:rgba(245,244,240,0.5);margin-top:8px;line-height:1.5;">Designers hired, onboarded, and led — team structure, culture, and DesignOps built from scratch</div>
+          </div>
+          <div style="background:var(--gray);border:1px solid var(--gray-border);padding:28px 32px;border-radius:2px;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(46,204,113,0.6);margin-bottom:10px;">AI Solutions</div>
+            <div style="font-size:14px;color:rgba(245,244,240,0.65);line-height:1.7;">Lab data structured and standardised across multiple brands, systems, and formats using AI-driven pipelines</div>
+          </div>
+          <div style="background:var(--gray);border:1px solid var(--gray-border);padding:28px 32px;border-radius:2px;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(46,204,113,0.6);margin-bottom:10px;">Predictive Healthcare</div>
+            <div style="font-size:14px;color:rgba(245,244,240,0.65);line-height:1.7;">Predictive models for six-month hospital admission forecasting and chronic disease risk identification</div>
+          </div>
+          <div style="background:var(--gray);border:1px solid var(--gray-border);padding:28px 32px;border-radius:2px;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(46,204,113,0.6);margin-bottom:10px;">Zero-to-One Products</div>
+            <div style="font-size:14px;color:rgba(245,244,240,0.65);line-height:1.7;">End-to-end discovery, strategic definition, and product design — complex business challenges translated into scalable digital products</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="project-nav-bottom">
+  <a href="dasa.html" class="proj-nav-link"><span class="pnl-label">← Previous</span><span class="pnl-title">Dasa · Nav & Nav Pro</span></a>
+  <a href="xp.html" class="proj-nav-link right"><span class="pnl-label">Next Project →</span><span class="pnl-title">Hub XP</span></a>
+</div>
+
+<footer><p>© 2026 Edward Thieme</p><div class="footer-logo">Edward <em>Thieme</em></div><p>São Paulo · Brazil</p></footer>
+<script src="shared.js"></script>
+</body>
+</html>

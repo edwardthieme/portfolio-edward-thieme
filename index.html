@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edward Thieme — Head of Design</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+.hero-photo {
+  position: relative;
+  overflow: hidden;
+  background: #111;
+}
+.hero-photo-placeholder {
+  width:100%;height:100%;
+  background: linear-gradient(160deg,#1c1c1c 0%,#0a0a0a 100%);
+  display:flex;align-items:center;justify-content:center;
+  /* Replace with: <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;filter:grayscale(100%)"> */
+}
+.hero-photo-hint { font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;color:rgba(255,255,255,0.07);text-transform:uppercase; }
+.hero-photo-overlay {
+  position:absolute;inset:0;
+  background: linear-gradient(to right,transparent 55%,var(--black) 100%),
+              linear-gradient(to bottom,var(--black) 0%,transparent 12%,transparent 82%,var(--black) 100%);
+}
+.hero-text {
+  display:flex;flex-direction:column;justify-content:center;
+  padding: 130px 80px 80px 56px;
+}
+.hero-eyebrow { font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--red);margin-bottom:30px;opacity:0;animation:fadeUp 0.8s 0.2s forwards; }
+.hero-name { font-family:'Playfair Display',serif;font-size:clamp(52px,6.5vw,90px);font-weight:900;line-height:0.93;letter-spacing:-0.025em;margin-bottom:30px;opacity:0;animation:fadeUp 0.9s 0.35s forwards; }
+.hero-name em { font-style:italic;color:var(--red); }
+.hero-desc { font-size:17px;line-height:1.8;color:rgba(245,244,240,0.58);max-width:400px;margin-bottom:56px;opacity:0;animation:fadeUp 0.9s 0.5s forwards; }
+.hero-stats { display:flex;gap:48px;opacity:0;animation:fadeUp 0.9s 0.65s forwards; }
+.stat-n { font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1; }
+.stat-n em { color:var(--red);font-style:normal; }
+.stat-l { font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);margin-top:5px; }
+
+/* ─── WORK INDEX ─── */
+.work-index { padding:120px 60px; }
+.work-list { margin-top:64px; }
+.work-item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 48px;
+  align-items: center;
+  padding: 48px 0;
+  border-bottom: 1px solid var(--gray-border);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.3s;
+  position: relative;
+  cursor: none;
+}
+.work-item::before { content:''; position:absolute;left:-60px;right:-60px;top:0;bottom:0;background:var(--gray);opacity:0;transition:opacity 0.3s; }
+.work-item:hover::before { opacity:1; }
+.work-item * { position:relative; }
+.work-item:first-child { border-top:1px solid var(--gray-border); }
+.work-num { font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:rgba(245,244,240,0.06);line-height:1; }
+.work-meta {}
+.work-company { font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:8px; }
+.work-project { font-family:'Playfair Display',serif;font-size:clamp(22px,2.5vw,32px);font-weight:700;line-height:1.1;margin-bottom:12px; }
+.work-desc { font-size:14px;line-height:1.65;color:rgba(245,244,240,0.45);max-width:500px; }
+.work-tags { display:flex;gap:8px;flex-wrap:wrap;margin-top:14px; }
+.tag { font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--gray-border);padding:4px 10px;border-radius:2px;color:rgba(245,244,240,0.35); }
+.work-arrow { font-size:28px;color:rgba(245,244,240,0.15);transition:color 0.2s,transform 0.3s; font-style:normal; }
+.work-item:hover .work-arrow { color:var(--red);transform:translateX(6px); }
+
+/* ─── ABOUT STRIP ─── */
+.about-strip { background:var(--gray);padding:100px 60px; }
+.about-inner { display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start; }
+.skills-grid { display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-border);border:1px solid var(--gray-border);margin-top:48px; }
+.skill-cell { background:var(--gray);padding:22px 24px;transition:background 0.2s; }
+.skill-cell:hover { background:var(--gray-mid); }
+.skill-cell-title { font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);margin-bottom:6px; }
+.skill-cell-desc { font-size:13px;color:rgba(245,244,240,0.5);line-height:1.5; }
+
+/* ─── CONTACT ─── */
+.contact-section { padding:140px 60px;text-align:center; }
+.contact-section .section-title { font-size:clamp(52px,7vw,100px);margin-bottom:28px; }
+.contact-sub { font-size:17px;color:rgba(245,244,240,0.5);max-width:480px;margin:0 auto 60px;line-height:1.75; }
+.cta-row { display:flex;justify-content:center;gap:20px;flex-wrap:wrap; }
+.cta { display:inline-flex;align-items:center;gap:10px;padding:15px 36px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.3s; cursor:none; }
+.cta.primary { background:var(--red);color:var(--white); }
+.cta.primary:hover { background:var(--red-dim);transform:translateY(-2px); }
+.cta.secondary { border:1px solid rgba(245,244,240,0.18);color:rgba(245,244,240,0.6); }
+.cta.secondary:hover { border-color:var(--red);color:var(--red);transform:translateY(-2px); }
+
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-photo{height:62vw;}
+  .hero-text{padding:60px 32px;}
+  .work-index{padding:80px 32px;}
+  .work-item{grid-template-columns:60px 1fr;gap:24px;}
+  .work-arrow{display:none;}
+  .work-item::before{left:-32px;right:-32px;}
+  .about-strip{padding:80px 32px;}
+  .about-inner{grid-template-columns:1fr;gap:48px;}
+  .contact-section{padding:100px 32px;}
+}
+@media(max-width:600px){
+  .hero-stats{gap:28px;}
+  .skills-grid{grid-template-columns:1fr;}
+  .work-item{grid-template-columns:1fr;}
+  .work-num{display:none;}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">ET / 2026</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo">
+    <div class="hero-photo-placeholder">
+      <img src="images/edward-hero.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(100%);">
+    </div>
+    <div class="hero-photo-overlay"></div>
+  </div>
+  <div class="hero-text">
+    <p class="hero-eyebrow">Head of Design · São Paulo, BR</p>
+    <h1 class="hero-name">Edward<br><em>Thieme</em></h1>
+    <p class="hero-desc">On the following pages, you will find a showcase of teams, products, and initiatives that I have personally led over the past decade with an emphasis on design and innovation. If you require additional material or information, feel free to ask. I'd be more than happy to provide further insights.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-n">75<em>+</em></div>
+        <div class="stat-l">Designers Led</div>
+      </div>
+      <div>
+        <div class="stat-n">9<em>M</em></div>
+        <div class="stat-l">Users Reached</div>
+      </div>
+      <div>
+        <div class="stat-n">15<em>×</em></div>
+        <div class="stat-l">Design Awards</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="red-line"></div>
+
+<!-- WORK LIST -->
+<section class="work-index" id="work">
+  <p class="section-label reveal">Selected Work</p>
+  <h2 class="section-title reveal">Projects &amp;<br><em style="color:var(--red);font-style:italic;">Impact</em></h2>
+
+  <div class="work-list">
+
+    <a href="dasa.html" class="work-item reveal">
+      <div class="work-num">01</div>
+      <div class="work-meta">
+        <p class="work-company">Dasa</p>
+        <h3 class="work-project">Nav, Nav Pro &amp; Design System</h3>
+        <p class="work-desc">Built and led a team of 75 designers to create Dasa's entire digital health ecosystem from scratch — patient app, doctor platform, design system, rebranding and custom typography.</p>
+        <div class="work-tags">
+          <span class="tag">Healthcare</span>
+          <span class="tag">Team Leadership</span>
+          <span class="tag">Product Design</span>
+          <span class="tag">Design System</span>
+          <span class="tag">Brasil Design Award</span>
+        </div>
+      </div>
+      <em class="work-arrow">→</em>
+    </a>
+
+    <a href="startups.html" class="work-item reveal">
+      <div class="work-num">02</div>
+      <div class="work-meta">
+        <p class="work-company">Lya Health · Nina Pet Health · Livia Health</p>
+        <h3 class="work-project">Early-Stage Ventures</h3>
+        <p class="work-desc">Three AI-native startups built from zero: a clinical AI assistant for doctors, a pet healthcare platform, and a healthtech company where I built the first Design org from 0 to 15 — including predictive healthcare models and AI-driven lab data standardisation.</p>
+        <div class="work-tags">
+          <span class="tag">Healthtech</span>
+          <span class="tag">AI Products</span>
+          <span class="tag">Startup</span>
+          <span class="tag">0→1</span>
+          <span class="tag">Design Leadership</span>
+        </div>
+      </div>
+      <em class="work-arrow">→</em>
+    </a>
+
+    <a href="xp.html" class="work-item reveal">
+      <div class="work-num">03</div>
+      <div class="work-meta">
+        <p class="work-company">XP Inc.</p>
+        <h3 class="work-project">Hub XP — First Advisor App in LATAM</h3>
+        <p class="work-desc">Conceived and shipped the first investment advisor mobile app in Latin America. Integrated CRM, portfolios, smart notifications, and simulations — generating R$ 434B in simulated investments.</p>
+        <div class="work-tags">
+          <span class="tag">Fintech</span>
+          <span class="tag">Mobile App</span>
+          <span class="tag">UX Strategy</span>
+        </div>
+      </div>
+      <em class="work-arrow">→</em>
+    </a>
+
+    <a href="btg.html" class="work-item reveal">
+      <div class="work-num">04</div>
+      <div class="work-meta">
+        <p class="work-company">BTG Pactual · Fjord</p>
+        <h3 class="work-project">Digital Investment Platform</h3>
+        <p class="work-desc">Designed a new investment management experience for desktop and tablet — including the full onboarding flow and the official product landing page.</p>
+        <div class="work-tags">
+          <span class="tag">Finance</span>
+          <span class="tag">Product Design</span>
+          <span class="tag">Onboarding</span>
+        </div>
+      </div>
+      <em class="work-arrow">→</em>
+    </a>
+
+    <a href="monsanto.html" class="work-item reveal">
+      <div class="work-num">05</div>
+      <div class="work-meta">
+        <p class="work-company">Monsanto · Fjord</p>
+        <h3 class="work-project">Farming Experience — ARO Platform</h3>
+        <p class="work-desc">End-to-end service design for Brazilian soybean farmers. Extensive field research led to ARO — a platform that simplifies processes from planting to harvest, including a physical totem kiosk.</p>
+        <div class="work-tags">
+          <span class="tag">Agritech</span>
+          <span class="tag">Service Design</span>
+          <span class="tag">Research</span>
+        </div>
+      </div>
+      <em class="work-arrow">→</em>
+    </a>
+
+    <a href="santander.html" class="work-item reveal">
+      <div class="work-num">06</div>
+      <div class="work-meta">
+        <p class="work-company">Santander · Fjord</p>
+        <h3 class="work-project">Car Loans — Digitizing a Paper Process</h3>
+        <p class="work-desc">Disrupted a commoditized car loan market with a real-time mobile platform. Generated $400M in new loans at launch and a 40% revenue increase.</p>
+        <div class="work-tags">
+          <span class="tag">Banking</span>
+          <span class="tag">Service Design</span>
+          <span class="tag">Mobile</span>
+        </div>
+      </div>
+      <em class="work-arrow">→</em>
+    </a>
+
+    <a href="natura.html" class="work-item reveal">
+      <div class="work-num">07</div>
+      <div class="work-meta">
+        <p class="work-company">Natura · Fjord</p>
+        <h3 class="work-project">Digital Experiences — Redefining E-Commerce</h3>
+        <p class="work-desc">Unified two separate platforms into a singular, seamless digital experience for Brazil's largest cosmetics company — aligning digital presence with brand vision.</p>
+        <div class="work-tags">
+          <span class="tag">E-Commerce</span>
+          <span class="tag">UX Design</span>
+          <span class="tag">Digital Strategy</span>
+        </div>
+      </div>
+      <em class="work-arrow">→</em>
+    </a>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-strip" id="about">
+  <div class="about-inner">
+    <div>
+      <p class="section-label reveal">About</p>
+      <h2 class="section-title reveal">Design<br><em style="color:var(--red);font-style:italic;">as force</em></h2>
+    </div>
+    <div class="reveal">
+      <p class="content-lead">As Head of Design, I build teams, shape culture, and deliver products that move real metrics.</p>
+      <p class="content-body">I've led a design team of <strong>75 designers</strong> from scratch during a period of major company transformation at Dasa — one of Latin America's largest healthcare companies. My work spans digital health, fintech, e-commerce, and agritech — always at the intersection of strategy, product, and craft.</p>
+      <p class="content-body" style="margin-top:16px;">I believe design is only valuable when it's measurable.</p>
+
+      <div style="margin-top:32px;padding:24px 28px;border:1px solid var(--gray-border);border-left:3px solid var(--red);border-radius:2px;">
+        <p class="section-label" style="font-size:9px;margin-bottom:14px;">Education</p>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:6px;height:6px;background:var(--red);border-radius:50%;flex-shrink:0;margin-top:6px;"></div>
+            <div style="font-size:14px;color:rgba(245,244,240,0.7);line-height:1.5;"><strong style="color:var(--white);">M.Sc. Engineering — Design &amp; Technology</strong> · UFRGS</div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:6px;height:6px;background:var(--red);border-radius:50%;flex-shrink:0;margin-top:6px;"></div>
+            <div style="font-size:14px;color:rgba(245,244,240,0.7);line-height:1.5;"><strong style="color:var(--white);">Executive Education — Digital Disruption</strong> · University of Cambridge</div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:6px;height:6px;background:var(--red);border-radius:50%;flex-shrink:0;margin-top:6px;"></div>
+            <div style="font-size:14px;color:rgba(245,244,240,0.7);line-height:1.5;"><strong style="color:var(--white);">B.A. Product Design</strong> · Universidade Feevale</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-cell"><div class="skill-cell-title">Team Leadership</div><div class="skill-cell-desc">Building and scaling world-class design teams from zero</div></div>
+        <div class="skill-cell"><div class="skill-cell-title">Product Strategy</div><div class="skill-cell-desc">Digital vision, roadmaps, and OKRs with leadership</div></div>
+        <div class="skill-cell"><div class="skill-cell-title">Design Systems</div><div class="skill-cell-desc">End-to-end DS & DesignOps at enterprise scale</div></div>
+        <div class="skill-cell"><div class="skill-cell-title">Service Design</div><div class="skill-cell-desc">Research, journey mapping, and systemic thinking</div></div>
+        <div class="skill-cell"><div class="skill-cell-title">Brand & Identity</div><div class="skill-cell-desc">Rebranding, visual language, custom typography</div></div>
+        <div class="skill-cell"><div class="skill-cell-title">UX / Interaction</div><div class="skill-cell-desc">End-to-end design on complex product ecosystems</div></div>
+        <div class="skill-cell"><div class="skill-cell-title">Product Design · 0→1</div><div class="skill-cell-desc">Taking products from zero to launch — concept, architecture, MVP, and scale</div></div>
+        <div class="skill-cell"><div class="skill-cell-title">Design with AI</div><div class="skill-cell-desc">Leveraging AI in design processes — hypothesis validation, generative exploration, and user testing at speed</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <p class="section-label" style="justify-content:center;">Get in Touch</p>
+  <h2 class="section-title reveal">Let's build<br>something <em style="color:var(--red);">great</em></h2>
+  <p class="contact-sub reveal">Open to leadership roles, strategic partnerships, and conversations about design, product, and impact.</p>
+  <div class="cta-row reveal">
+    <a href="mailto:edwardthieme@gmail.com" class="cta primary">edwardthieme@gmail.com</a>
+    <a href="tel:+5511973623321" class="cta secondary">+55 11 97362-3321</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Edward Thieme</p>
+  <div class="footer-logo">Edward <em>Thieme</em></div>
+  <p>São Paulo · Brazil</p>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

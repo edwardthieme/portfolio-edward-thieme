@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monsanto · Farming Experience · Edward Thieme</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.mons-stripe{height:4px;background:linear-gradient(to right,#5a1515,#8b2a2a,#5a1515);}
+.pain-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--gray-border);border:1px solid var(--gray-border);margin-top:40px;}
+.pain-cell{background:var(--gray);padding:28px 24px;text-align:center;transition:background 0.3s;}
+.pain-cell:hover{background:var(--gray-mid);}
+.pain-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:8px;}
+.pain-sub{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);}
+.aro-feature{padding:48px 0;border-bottom:1px solid var(--gray-border);}
+.aro-feature:last-child{border-bottom:none;}
+.aro-screen{background:var(--gray-mid);border:1px solid var(--gray-border);border-radius:8px;padding:16px;min-height:220px;display:flex;flex-direction:column;}
+@media(max-width:700px){.pain-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<nav>
+  <a href="index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2L4 7l5 5"/></svg>Back</a>
+  <a href="index.html" class="nav-logo">ET / Portfolio</a>
+</nav>
+
+<div class="project-hero">
+  <div class="project-hero-bg">
+    <img class="project-hero-bg-inner" src="images/monsanto-aro-totem.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(100%) brightness(0.2);">
+  </div>
+  <div class="project-hero-overlay"></div>
+  <div class="project-hero-content">
+    <span class="project-tag">Agritech · Fjord · Service Design</span>
+    <h1 class="project-hero-title">Monsanto<br><em style="color:#8b4513;">Farming</em></h1>
+    <p class="project-hero-sub">End-to-end service design for Brazilian soybean farmers. Extensive field research, journey mapping, and a platform — ARO — that supports farmers from planning to harvest.</p>
+  </div>
+</div>
+<div class="mons-stripe"></div>
+
+<section class="content-section dark">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <p class="section-label">Company</p>
+        <h2 class="section-title" style="font-size:clamp(28px,3vw,42px);">Monsanto</h2>
+        <p class="content-body" style="margin-top:20px;">An American corporation and a leading producer of chemical, agricultural, and biochemical products, founded in 1901. In Brazil, Monsanto supplied seeds and agricultural technology to the country's vast soybean farming sector — one of the world's largest.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p class="section-label">The Problem</p>
+        <h2 class="section-title" style="font-size:clamp(28px,3vw,42px);">Four Core Tensions</h2>
+        <ul class="resp-list">
+          <li><div class="resp-icon"><span>!</span></div><div><div class="resp-title">Low Market Penetration</div><div class="resp-desc">One type of Monsanto seeds had very low adoption despite product quality advantages.</div></div></li>
+          <li><div class="resp-icon"><span>!</span></div><div><div class="resp-title">High Farmer Detractor Rate</div><div class="resp-desc">A significant portion of farmers had negative sentiment toward the brand.</div></div></li>
+          <li><div class="resp-icon"><span>!</span></div><div><div class="resp-title">Royalty Non-Payment</div><div class="resp-desc">A large number of farmers were not paying Monsanto's seed royalties.</div></div></li>
+          <li><div class="resp-icon"><span>!</span></div><div><div class="resp-title">Bureaucratic Processes</div><div class="resp-desc">All processes — from seed ordering to royalty payment — were slow and paper-based.</div></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section gray">
+  <div class="container">
+    <p class="section-label reveal">Discovery</p>
+    <h2 class="section-title reveal">Going into<br><em style="color:var(--red);font-style:italic;">the Field</em></h2>
+    <div class="two-col" style="margin-top:48px;">
+      <div class="reveal">
+        <p class="content-lead">We conducted extensive on-site research with farmers, distributors, cooperatives, and Monsanto stakeholders — in two of Brazil's key agricultural states.</p>
+        <p class="content-body">The research covered Mato Grosso (Sorriso) and Rio Grande do Sul (Passo Fundo) — representing very different farming profiles, scales, and relationships with the Monsanto brand. We needed to understand both.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="research-row">
+          <div class="research-item"><div class="research-num">17</div><div class="research-label">Stakeholders</div></div>
+          <div class="research-item"><div class="research-num">07</div><div class="research-label">Boards</div></div>
+          <div class="research-item"><div class="research-num">14</div><div class="research-label">Farmers</div></div>
+          <div class="research-item"><div class="research-num">07</div><div class="research-label">Distributors</div></div>
+          <div class="research-item"><div class="research-num">02</div><div class="research-label">Cooperatives</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:48px;">
+      <img src="images/monsanto-journey.jpg" style="width:100%;border-radius:6px;display:block;" alt="Monsanto — Journey Mapping">
+    </div>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <div class="container">
+    <p class="section-label reveal">Synthesis</p>
+    <h2 class="section-title reveal">Service<br><em style="color:var(--red);font-style:italic;">Drivers</em></h2>
+    <p class="content-body reveal" style="max-width:640px;margin-top:20px;">From the research, we identified five interconnected service drivers — the systemic tensions that any solution would need to address to be truly effective.</p>
+    <div class="pain-grid reveal" style="margin-top:40px;">
+      <div class="pain-cell"><div class="pain-title">Bureaucracy &amp; Processes</div><div class="pain-sub">Seamless</div></div>
+      <div class="pain-cell"><div class="pain-title">Productivity &amp; Management</div><div class="pain-sub">Performance</div></div>
+      <div class="pain-cell"><div class="pain-title">Market &amp; External Factors</div><div class="pain-sub">Sensitivity</div></div>
+      <div class="pain-cell"><div class="pain-title">Organisational Structure</div><div class="pain-sub">Responsibility</div></div>
+      <div class="pain-cell"><div class="pain-title">Beyond Agriculture</div><div class="pain-sub">Balance</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section gray">
+  <div class="container">
+    <p class="section-label reveal">The Solution</p>
+    <h2 class="section-title reveal">ARO —<br><em style="color:var(--red);font-style:italic;">Agricultura Simples</em></h2>
+    <div class="two-col" style="margin-top:48px;">
+      <div class="reveal">
+        <p class="content-lead">The ecosystem of concepts took shape in one solution: ARO — a platform that centralises and simplifies all processes linked to the use of technology sold by Monsanto.</p>
+        <p class="content-body">ARO offers support to farmers during all stages of the harvest year, from planning to harvest. It addresses bureaucracy (digital contracts, simplified royalties), productivity (harvest tracking, volume management), and market awareness — all in one platform accessible via web, mobile, and a physical totem kiosk at distributor locations.</p>
+        <ul class="resp-list">
+          <li><div class="resp-icon"><span>◈</span></div><div><div class="resp-title">Farm Dashboard</div><div class="resp-desc">Area planted, productivity vs regional average, exemption volume tracking.</div></div></li>
+          <li><div class="resp-icon"><span>◈</span></div><div><div class="resp-title">Volume Transfer</div><div class="resp-desc">Digitised volume transfer between business partners — eliminating paper contracts entirely.</div></div></li>
+          <li><div class="resp-icon"><span>◈</span></div><div><div class="resp-title">Production Tracking</div><div class="resp-desc">Year-on-year production comparison with regional benchmarks.</div></div></li>
+          <li><div class="resp-icon"><span>◈</span></div><div><div class="resp-title">Physical Totem</div><div class="resp-desc">A prototype digital totem deployed at Monsanto partner distributors for on-site access.</div></div></li>
+        </ul>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <img src="images/monsanto-aro-totem.jpg" style="width:100%;border-radius:6px;display:block;margin-bottom:12px;" alt="ARO — Physical totem at Monsanto partner distributors">
+        <img src="images/monsanto-aro-app.jpg" style="width:100%;border-radius:6px;display:block;" alt="ARO — Farming app screens">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="project-nav-bottom">
+  <a href="btg.html" class="proj-nav-link"><span class="pnl-label">← Previous</span><span class="pnl-title">BTG Pactual</span></a>
+  <a href="santander.html" class="proj-nav-link right"><span class="pnl-label">Next Project →</span><span class="pnl-title">Santander Car Loans</span></a>
+</div>
+<footer><p>© 2026 Edward Thieme</p><div class="footer-logo">Edward <em>Thieme</em></div><p>São Paulo · Brazil</p></footer>
+<script src="shared.js"></script>
+</body>
+</html>

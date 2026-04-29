@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hub XP — XP Inc. · Edward Thieme</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.xp-stripe { height:4px; background:linear-gradient(to right,#1a1a1a,#f5d000,#1a1a1a); }
+.interview-row { display:flex; gap:2px; background:var(--gray-border); border:1px solid var(--gray-border); margin-top:40px; }
+.interview-item { flex:1; background:var(--gray); padding:28px 24px; text-align:center; transition:background 0.3s; }
+.interview-item:hover { background:var(--gray-mid); }
+.interview-num { font-family:'Playfair Display',serif; font-size:36px; font-weight:700; color:var(--white); line-height:1; }
+.interview-label { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gray-light); margin-top:8px; }
+
+.feature-row { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; padding:56px 0; border-bottom:1px solid var(--gray-border); }
+.feature-row:last-child { border-bottom:none; }
+.feature-row.flip { direction:rtl; }
+.feature-row.flip > * { direction:ltr; }
+
+.app-screen-xp { background:var(--gray-mid); border:1px solid var(--gray-border); border-radius:20px; padding:16px; min-height:320px; display:flex; flex-direction:column; gap:10px; }
+.xp-notch { width:60px;height:4px;background:var(--gray-border);border-radius:2px;margin:0 auto 12px; }
+
+@media(max-width:960px){
+  .feature-row { grid-template-columns:1fr; }
+  .feature-row.flip { direction:ltr; }
+  .interview-row { flex-wrap:wrap; }
+  .interview-item { flex:1 1 40%; }
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<nav>
+  <a href="index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2L4 7l5 5"/></svg>Back</a>
+  <a href="index.html" class="nav-logo">ET / Portfolio</a>
+</nav>
+
+<!-- HERO -->
+<div class="project-hero">
+  <div class="project-hero-bg">
+    <img class="project-hero-bg-inner" src="images/xp-daily-summary.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(100%) brightness(0.2);">
+  </div>
+  <div class="project-hero-overlay"></div>
+  <div class="project-hero-content">
+    <span class="project-tag">Fintech · XP Inc. · 2019</span>
+    <h1 class="project-hero-title">Hub<br><em style="color:#f5d000;">XP</em></h1>
+    <p class="project-hero-sub">Transform the advisor experience into a digital extension of the relationship with XP and their customers — the first investment advisor app in Latin America.</p>
+  </div>
+</div>
+<div class="xp-stripe"></div>
+
+<!-- CONTEXT -->
+<section class="content-section dark">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <p class="section-label">Company</p>
+        <h2 class="section-title" style="font-size:clamp(28px,3vw,42px);">XP Inc.</h2>
+        <p class="content-body" style="margin-top:20px;">XP Inc. is a Brazilian investment management company — one of the country's largest financial platforms, with a vast network of independent investment advisors (AAIs) serving hundreds of thousands of customers.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p class="section-label">My Role</p>
+        <h2 class="section-title" style="font-size:clamp(28px,3vw,42px);">Experience Design Manager</h2>
+        <ul class="resp-list">
+          <li><div class="resp-icon"><span>◈</span></div><div><div class="resp-title">Strategic Vision</div><div class="resp-desc">Conceptualised and defined digital strategies for the advisor ecosystem.</div></div></li>
+          <li><div class="resp-icon"><span>◈</span></div><div><div class="resp-title">Design Expertise</div><div class="resp-desc">Engaged in UX, interaction, and visual design across the full product suite.</div></div></li>
+          <li><div class="resp-icon"><span>◈</span></div><div><div class="resp-title">Collaborative Approach</div><div class="resp-desc">Worked closely with PMs, tech managers, and stakeholders to ensure quality and timely delivery.</div></div></li>
+          <li><div class="resp-icon"><span>◈</span></div><div><div class="resp-title">Performance Tracking</div><div class="resp-desc">Monitored business results and tracked metrics related to user behaviour and product performance.</div></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="content-section gray">
+  <div class="container">
+    <p class="section-label reveal">Discovery</p>
+    <h2 class="section-title reveal">Understanding<br>the <em style="color:var(--red);font-style:italic;">Problem</em></h2>
+    <div class="two-col" style="margin-top:48px;">
+      <div class="reveal">
+        <p class="content-lead">We conducted research interviews with XP stakeholders, advisors, and customers to understand the real pain points.</p>
+        <p class="content-body">Our goal was to help advisors shift their focus from administrative tasks toward building stronger client relationships — while minimising time spent on back-office processes.</p>
+        <p class="content-body" style="margin-top:16px;">Research spanned multiple states and office types, covering the full diversity of the XP advisor network.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="interview-row">
+          <div class="interview-item"><div class="interview-num">30</div><div class="interview-label">Interviews</div></div>
+          <div class="interview-item"><div class="interview-num">08</div><div class="interview-label">Offices</div></div>
+          <div class="interview-item"><div class="interview-num">04</div><div class="interview-label">States</div></div>
+        </div>
+        <div class="impact-callout" style="margin-top:32px;background:rgba(245,208,0,0.05);border-color:rgba(245,208,0,0.2);border-left-color:#f5d000;">
+          <p>The research revealed that advisors spent the majority of their time on <strong>manual processes, spreadsheets, and back-office tasks</strong> — leaving little room for actual relationship building with clients.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="content-section dark">
+  <div class="container">
+    <p class="section-label reveal">Design &amp; Delivery</p>
+    <h2 class="section-title reveal">An Integrated<br><em style="color:var(--red);font-style:italic;">Ecosystem</em></h2>
+    <p class="content-body reveal" style="max-width:680px;margin-top:24px;">We established an integrated ecosystem of digital products designed for financial advisors — the first financial advisor app in Latin America. Connected to CRM and back-office systems to give advisors access to client portfolios from any location.</p>
+
+    <!-- Feature 01: Daily Summary -->
+    <div class="feature-row reveal" style="margin-top:56px;grid-template-columns:1fr 2fr;">
+      <div>
+        <p class="section-label" style="font-size:9px;">Feature 01</p>
+        <h3 style="font-family:'Playfair Display',serif;font-size:clamp(24px,2.8vw,38px);font-weight:700;margin-bottom:16px;">Daily Summary</h3>
+        <p class="content-body">Gives advisors full control from activity cards and consolidated information about their customer portfolio. Pending tasks, overdue items, and upcoming meetings — all in one glance.</p>
+      </div>
+      <div>
+        <img src="images/xp-daily-summary.jpg" style="width:100%;border-radius:12px;display:block;" alt="Hub XP — Daily summary screen">
+      </div>
+    </div>
+
+    <!-- Feature 02 + 03: Wallet & Cart unified -->
+    <div class="feature-row flip reveal" style="grid-template-columns:2fr 1fr;direction:ltr;">
+      <div>
+        <img src="images/xp-wallet-cart.jpg" style="width:100%;border-radius:12px;display:block;" alt="Hub XP — Customer wallet and shopping cart">
+      </div>
+      <div>
+        <p class="section-label" style="font-size:9px;">Feature 02 &amp; 03</p>
+        <h3 style="font-family:'Playfair Display',serif;font-size:clamp(24px,2.8vw,38px);font-weight:700;margin-bottom:16px;">Customer Wallet, Portfolio &amp; Shopping Cart</h3>
+        <p class="content-body">Get consolidated data from your customer portfolio, including withdrawals, NPS, and NET. The full investment picture in one place.</p>
+        <p class="content-body" style="margin-top:16px;">Seamlessly select from a variety of investment opportunities and efficiently manage orders for multiple clients directly within the app.</p>
+        <div class="stat-highlight">
+          <div class="stat-num" style="color:var(--red);">−90%</div>
+          <div class="stat-desc">Reduction in operating time for portfolio management tasks</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 04: Schedule + Smart Push unified -->
+    <div class="feature-row reveal" style="grid-template-columns:1fr 2fr;">
+      <div>
+        <p class="section-label" style="font-size:9px;">Feature 04 &amp; 05</p>
+        <h3 style="font-family:'Playfair Display',serif;font-size:clamp(24px,2.8vw,38px);font-weight:700;margin-bottom:16px;">Organise Your Schedule &amp; Smart Push</h3>
+        <p class="content-body">An exclusive calendar seamlessly integrated with CRM — easily manages all appointments, client and business meetings, and financial requirements.</p>
+        <p class="content-body" style="margin-top:16px;">Receive customer transaction notifications with automated investment suggestions. Once accepted, these are processed automatically — turning a notification into a completed trade.</p>
+      </div>
+      <div>
+        <img src="images/xp-calendar-notification.jpg" style="width:100%;border-radius:12px;display:block;" alt="Hub XP — Calendar and smart notifications">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="content-section gray">
+  <div class="container">
+    <p class="section-label reveal">Results</p>
+    <h2 class="section-title reveal">Key<br><em style="color:var(--red);font-style:italic;">Results</em></h2>
+    <div class="three-col" style="margin-top:56px;">
+      <div class="reveal"><div class="stat-highlight"><div class="stat-num">−90%</div><div class="stat-desc">Reduction in operating time for advisors managing portfolios</div></div></div>
+      <div class="reveal reveal-delay-1"><div class="stat-highlight"><div class="stat-num">+58%</div><div class="stat-desc">Increase in daily app access by advisors after launch</div></div></div>
+      <div class="reveal reveal-delay-2"><div class="stat-highlight"><div class="stat-num">+24%</div><div class="stat-desc">Market share growth driven by platform adoption</div></div></div>
+      <div class="reveal"><div class="stat-highlight"><div class="stat-num">+73%</div><div class="stat-desc">Average increase in financial performance per advisor</div></div></div>
+      <div class="reveal reveal-delay-1"><div class="stat-highlight"><div class="stat-num">R$434B</div><div class="stat-desc">Total simulated investments conducted on the platform</div></div></div>
+      <div class="reveal reveal-delay-2"><div class="stat-highlight"><div class="stat-num">4.9 / 4.6</div><div class="stat-desc">App Store &amp; Google Play ratings</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="project-nav-bottom">
+  <a href="startups.html" class="proj-nav-link"><span class="pnl-label">← Previous</span><span class="pnl-title">Early-Stage Ventures</span></a>
+  <a href="btg.html" class="proj-nav-link right"><span class="pnl-label">Next Project →</span><span class="pnl-title">BTG Pactual</span></a>
+</div>
+<footer><p>© 2026 Edward Thieme</p><div class="footer-logo">Edward <em>Thieme</em></div><p>São Paulo · Brazil</p></footer>
+<script src="shared.js"></script>
+</body>
+</html>

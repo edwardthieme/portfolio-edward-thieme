@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santander Car Loans · Edward Thieme</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.sant-stripe { height:4px;background:linear-gradient(to right,#ec0000,#a30000); }
+.before-after { display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--gray-border);border:1px solid var(--gray-border);margin-top:40px; }
+.ba-col { background:var(--gray);padding:32px 28px; }
+.ba-label { font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray-light);margin-bottom:16px; }
+.ba-title { font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:16px; }
+.ba-list { list-style:none; }
+.ba-list li { font-size:14px;color:rgba(245,244,240,0.6);padding:8px 0;border-bottom:1px solid var(--gray-border);display:flex;gap:10px;align-items:flex-start;line-height:1.5; }
+.ba-list li::before { flex-shrink:0;margin-top:2px; }
+.ba-list.before li::before { content:'✕';color:rgba(192,57,43,0.5);font-size:10px; }
+.ba-list.after li::before { content:'✓';color:#2ecc71;font-size:10px; }
+.simulator { background:var(--gray-mid);border:1px solid var(--gray-border);border-radius:4px;padding:28px;margin-top:20px; }
+.sim-label { font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);margin-bottom:8px; }
+.sim-val { font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--white);margin-bottom:16px; }
+.sim-bar { height:6px;background:var(--gray-border);border-radius:3px;margin-bottom:20px;position:relative; }
+.sim-bar-fill { height:100%;background:linear-gradient(to right,#ec0000,#a30000);border-radius:3px;width:60%; }
+.sim-bar-dot { width:14px;height:14px;background:var(--white);border-radius:50%;position:absolute;top:-4px;left:58%;box-shadow:0 0 0 3px rgba(192,57,43,0.4); }
+.sim-row { display:grid;grid-template-columns:repeat(4,1fr);gap:16px; }
+.sim-cell { background:var(--gray);border:1px solid var(--gray-border);border-radius:3px;padding:12px 10px; }
+.sim-cell-label { font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-light);margin-bottom:4px; }
+.sim-cell-val { font-size:13px;color:var(--white);font-weight:500; }
+@media(max-width:700px){ .before-after{grid-template-columns:1fr;} .sim-row{grid-template-columns:1fr 1fr;} }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<nav>
+  <a href="index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2L4 7l5 5"/></svg>Back</a>
+  <a href="index.html" class="nav-logo">ET / Portfolio</a>
+</nav>
+
+<div class="project-hero">
+  <div class="project-hero-bg">
+    <img class="project-hero-bg-inner" src="images/santander-simulator.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(100%) brightness(0.15);">
+  </div>
+  <div class="project-hero-overlay"></div>
+  <div class="project-hero-content">
+    <span class="project-tag">Banking · Fjord · São Paulo</span>
+    <h1 class="project-hero-title">Santander<br><em style="color:#ec0000;">Car Loans</em></h1>
+    <p class="project-hero-sub">Facing pressure in a commoditised car loan market, Santander sought to disrupt and digitise the paper-based loans process — and become a market leader in the process.</p>
+  </div>
+</div>
+<div class="sant-stripe"></div>
+
+<!-- CONTEXT -->
+<section class="content-section dark">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <p class="section-label">Company</p>
+        <h2 class="section-title" style="font-size:clamp(28px,3vw,42px);">Santander</h2>
+        <p class="content-body" style="margin-top:20px;">A private bank in Brazil and the only international bank with scale in the country. Santander operates a vast network of car dealers and financial products, with car financing being one of its key product verticals.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p class="section-label">The Challenge</p>
+        <h2 class="section-title" style="font-size:clamp(28px,3vw,42px);">Disrupt or Lose</h2>
+        <p class="content-body" style="margin-top:20px;">The car loan market in Brazil was highly commoditised — rates were similar across banks, and the experience was driven entirely by paper forms, phone calls, and manual approval processes. Car dealers were spending hours per loan.</p>
+        <p class="content-body" style="margin-top:16px;">Santander needed to stand out. The solution: make the experience so fast and frictionless that dealers would choose Santander by default.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="content-section gray">
+  <div class="container">
+    <p class="section-label reveal">The Transformation</p>
+    <h2 class="section-title reveal">Paper Process<br><em style="color:var(--red);font-style:italic;">→ Real-Time Mobile</em></h2>
+    <div class="before-after reveal" style="margin-top:48px;">
+      <div class="ba-col">
+        <div class="ba-label">Before</div>
+        <div class="ba-title">Manual &amp; Fragmented</div>
+        <ul class="ba-list before">
+          <li>Paper-based loan forms at the dealership</li>
+          <li>Hours of manual data entry by staff</li>
+          <li>Phone calls to check loan approval status</li>
+          <li>No real-time simulation or comparison tools</li>
+          <li>High operational cost per loan processed</li>
+          <li>No differentiation from competitors</li>
+        </ul>
+      </div>
+      <div class="ba-col">
+        <div class="ba-label">After</div>
+        <div class="ba-title">Real-Time Mobile App</div>
+        <ul class="ba-list after">
+          <li>Real-time loan simulation on mobile and desktop</li>
+          <li>Instant approval status — no waiting</li>
+          <li>Dealers simulate, compare, and submit from any device</li>
+          <li>Digital signatures and automated documentation</li>
+          <li>30% reduction in operational costs</li>
+          <li>Santander positioned as pioneer and innovator</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PRODUCT -->
+<section class="content-section dark">
+  <div class="container">
+    <p class="section-label reveal">The Product</p>
+    <h2 class="section-title reveal">Real-Time<br><em style="color:var(--red);font-style:italic;">Loan Simulator</em></h2>
+    <div class="two-col" style="margin-top:56px;">
+      <div class="reveal">
+        <p class="content-lead">A mobile-first auto loans platform that makes the car-buying experience more enjoyable and efficient for dealers and customers alike.</p>
+        <p class="content-body">The platform allows car dealers to simulate loan conditions in real time, adjusting the down payment, loan duration, and comparing CDC options — with instant visual feedback on monthly instalments.</p>
+        <p class="content-body" style="margin-top:16px;">The full flow — from simulation to proposal to formalisation — was digitised and made available on mobile, tablet, and desktop.</p>
+        <div class="metrics-row" style="margin-top:40px;">
+          <div class="metric"><div class="metric-val"><span class="pos">$400M</span></div><div class="metric-label">New Loans at Launch</div></div>
+          <div class="metric"><div class="metric-val"><span class="pos">+40%</span></div><div class="metric-label">Revenue</div></div>
+          <div class="metric"><div class="metric-val"><span class="pos">+45%</span></div><div class="metric-label">Dealer Simulations</div></div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <img src="images/santander-simulator.jpg" style="width:100%;border-radius:6px;display:block;" alt="Santander — Real-time car loan simulator">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="content-section gray">
+  <div class="container">
+    <p class="section-label reveal">Results</p>
+    <h2 class="section-title reveal">Market<br><em style="color:var(--red);font-style:italic;">Leader</em></h2>
+    <div class="three-col" style="margin-top:56px;">
+      <div class="reveal"><div class="stat-highlight"><div class="stat-num">$400M</div><div class="stat-desc">In new loans generated at the launch of the mobile auto loans app</div></div></div>
+      <div class="reveal reveal-delay-1"><div class="stat-highlight"><div class="stat-num">+40%</div><div class="stat-desc">Revenue increase, positioning Santander as a pioneer in digital car finance</div></div></div>
+      <div class="reveal reveal-delay-2"><div class="stat-highlight"><div class="stat-num">+45%</div><div class="stat-desc">Increase in simulations performed by car dealers</div></div></div>
+      <div class="reveal"><div class="stat-highlight"><div class="stat-num">−30%</div><div class="stat-desc">Reduction in operational cost per loan processed</div></div></div>
+      <div class="reveal reveal-delay-1"><div class="stat-highlight"><div class="stat-num">3×</div><div class="stat-desc">Devices supported — mobile, tablet, and desktop — for maximum dealer reach</div></div></div>
+      <div class="reveal reveal-delay-2"><div class="stat-highlight"><div class="stat-num">∞</div><div class="stat-desc">The paper-based process was eliminated entirely, never to return</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="project-nav-bottom">
+  <a href="monsanto.html" class="proj-nav-link"><span class="pnl-label">← Previous</span><span class="pnl-title">Monsanto · Farming</span></a>
+  <a href="natura.html" class="proj-nav-link right"><span class="pnl-label">Next Project →</span><span class="pnl-title">Natura Digital</span></a>
+</div>
+<footer><p>© 2026 Edward Thieme</p><div class="footer-logo">Edward <em>Thieme</em></div><p>São Paulo · Brazil</p></footer>
+<script src="shared.js"></script>
+</body>
+</html>
