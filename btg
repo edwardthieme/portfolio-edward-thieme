@@ -73,9 +73,10 @@
         <p class="content-body">Key features include real-time portfolio performance charts with benchmark comparisons (CDI, Ibovespa), fund-by-fund breakdown, historical returns, and a clear investment summary — all designed for clarity and sophistication.</p>
         <p class="content-body" style="margin-top:16px;">The tablet-first approach ensured that investors could manage their portfolios comfortably from anywhere — on the go, at meetings, or at home.</p>
       </div>
-      <div class="reveal reveal-delay-1">
-        <img src="btg-tablet-dashboard.jpg" style="width:100%;border-radius:6px;display:block;" alt="BTG Pactual — Digital investment dashboard on tablet">
-      </div>
+      <div>
+  <img src="btg-tablet-dashboard.jpg"
+       style="width:100%;border-radius:6px;display:block;">
+</div>
     </div>
   </div>
 </section>
